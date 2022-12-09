@@ -1,3 +1,4 @@
+//chrome://extensions/
 let myArray = []
 const buttonEl = document.getElementById("input-btn")
 const inputEl = document.getElementById("input-el")
