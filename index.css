@@ -4,14 +4,6 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/*
-
-Style our app according to the provided design!
-
-green color -> #5f9341
-
-*/
-
 
 input {
     width: 350px;
@@ -29,10 +21,21 @@ button {
     background-color: #5f9341;
     width: 90px;
     height: 40px;
-
     color: azure;
     border: none;
     font-size: larger;
+    font-weight: bolder;
+
+
+}
+
+#delete-btn {
+
+background-color: whitesmoke;
+color:#5f9341;
+border-radius: 1px solid #5f9341;
+font-weight: bold;
+border: 1px solid #5f9341;
 
 }
 

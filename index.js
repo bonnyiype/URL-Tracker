@@ -1,14 +1,32 @@
-//chrome://extensions/
 let myArray = []
 const buttonEl = document.getElementById("input-btn")
 const inputEl = document.getElementById("input-el")
-let ulEl = document.getElementById("ul-el")
+const ulEl = document.getElementById("ul-el")
+const UrlsFromLocalStorage = JSON.parse(localStorage("myArray"))
+const deleteBtn = documnet.getElementById("delete-btn")
 
+
+
+if (UrlsFromLocalStorage) {
+
+myArray = UrlsFromLocalStorage
+renderUrls()
+
+}
+
+deleteBtn.addEventListener("dblick", ()=>{
+
+    localStorage.clear()
+    myArray = []
+    renderUrls()
+
+})
 
 buttonEl.addEventListener("click",function() {
     
     myArray.push(inputEl.value)
     inputEl.value = ""
+    localStorage.setItem("myArray", JSON.stringify(myArray))
     renderUrls() 
 })
 
