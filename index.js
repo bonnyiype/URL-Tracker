@@ -2,31 +2,30 @@ let myArray = []
 const buttonEl = document.getElementById("input-btn")
 const inputEl = document.getElementById("input-el")
 const ulEl = document.getElementById("ul-el")
-const UrlsFromLocalStorage = JSON.parse(localStorage("myArray"))
-const deleteBtn = documnet.getElementById("delete-btn")
+let retrievedData = localStorage.getItem("myArray");// retrieving our data and converting it back into an array
+let myArraylist = JSON.parse(retrievedData);// retrieving our data and converting it back into an array
+const deleteBtn = document.getElementById("delete-btn")
 
 
 
-if (UrlsFromLocalStorage) {
+/*if (myArraylist) {
 
-myArray = UrlsFromLocalStorage
+myArray = myArraylist
 renderUrls()
 
-}
+}*/
 
-deleteBtn.addEventListener("dblick", ()=>{
-
-    localStorage.clear()
+deleteBtn.addEventListener("dblclick", ()=> {
+ localStorage.clear()
     myArray = []
     renderUrls()
-
 })
 
 buttonEl.addEventListener("click",function() {
     
     myArray.push(inputEl.value)
     inputEl.value = ""
-    localStorage.setItem("myArray", JSON.stringify(myArray))
+    localStorage.setItem("myArray", JSON.stringify(myArray)); //storing our array as a string
     renderUrls() 
 })
 
