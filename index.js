@@ -16,6 +16,17 @@ renderUrls()
 
 }*/
 
+saveBtn.addEventListener("click", ()=> {
+chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
+myArray.push(tabs[0].url)
+localStorage.setItem("myArray", JSON.stringify(myArray)); //storing our array as a string
+renderUrls(myArray) 
+
+})
+
+})
+
+
 //Adding parameter for refactoring the code(urls)
 function renderUrls(urls) {
 
@@ -37,9 +48,8 @@ function renderUrls(urls) {
     
 saveBtn.addEventListener("click", ()=> {
 
-    const tabs = [
-        {url: "https://www.linkedin.com/in/per-harald-borgen/"}
-    ]
+  
+    
 
 })
 
