@@ -2,8 +2,8 @@ let myArray = []
 const inputBtnEl = document.getElementById("input-btn")
 const inputEl = document.getElementById("input-el")
 const ulEl = document.getElementById("ul-el")
-let retrievedData = localStorage.getItem("myArray");// retrieving our data and converting it back into an array
-let myArraylist = JSON.parse(retrievedData);// retrieving our data and converting it back into an array
+// retrieving our data and converting it back into an array
+let myArraylist = JSON.parse(localStorage.getItem("myArray"));// retrieving our data and converting it back into an array
 const deleteBtn = document.getElementById("delete-btn")
 const saveBtn = document.getElementById("save-btn");
 
@@ -12,13 +12,13 @@ const saveBtn = document.getElementById("save-btn");
 if (myArraylist) {
 
 myArray = myArraylist
-renderUrls()
+renderUrls(myArray)
 
 }
 
 saveBtn.addEventListener("click", ()=> {
 chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
-myArray.push(tabs[0].url)
+myArray.push(tabs[0].url) //Chrome API syntax
 localStorage.setItem("myArray", JSON.stringify(myArray)); //storing our array as a string
 renderUrls(myArray) 
 
