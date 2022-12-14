@@ -9,12 +9,12 @@ const saveBtn = document.getElementById("save-btn");
 
 
 
-/*if (myArraylist) {
+if (myArraylist) {
 
 myArray = myArraylist
 renderUrls()
 
-}*/
+}
 
 saveBtn.addEventListener("click", ()=> {
 chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
