@@ -1,5 +1,5 @@
 let myArray = []
-const buttonEl = document.getElementById("input-btn")
+const inputBtnEl = document.getElementById("input-btn")
 const inputEl = document.getElementById("input-el")
 const ulEl = document.getElementById("ul-el")
 let retrievedData = localStorage.getItem("myArray");// retrieving our data and converting it back into an array
@@ -21,7 +21,7 @@ deleteBtn.addEventListener("dblclick", ()=> {
     renderUrls()
 })
 
-buttonEl.addEventListener("click",function() {
+inputBtnEl.addEventListener("click",function() {
     
     myArray.push(inputEl.value)
     inputEl.value = ""
